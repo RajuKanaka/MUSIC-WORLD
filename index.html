@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: linear-gradient(
+            rgba(55, 2, 2, 0.65),
+            rgba(0, 0, 0, 0.75)
+          ),
+          url(./Photos/backgorond.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .content {
+        width: 100%;
+        position: absolute;
+        top: 30%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: rgb(255, 137, 137);
+      }
+      h1 {
+        font-size: 40px;
+        letter-spacing: 8px;
+      }
+      p {
+        font-size: 14px;
+        letter-spacing: 12px;
+        word-spacing: 9px;
+        text-decoration: overline;
+      }
+
+      button {
+        width: 200px;
+        font-size: medium;
+        padding: 25px 0;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 35px;
+        font-weight: bold;
+        border: 2px solid #d90050;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      span {
+        background: #d90050;
+        height: 100%;
+        width: 0;
+        border-radius: 35px;
+        position: absolute;
+        left: -1px;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.4s;
+      }
+      button:hover span {
+        width: 100%;
+      }
+      button:hover {
+        border: none;
+      }
+    </style>
+    <title>Login to Music World</title>
+  </head>
+  <body>
+    <dvi class="content">
+      <h1>WELCOME TO MUSIC WORLD</h1>
+      <p>South Indian music hub</p>
+    </dvi>
+    <button id="login"><span></span> Login With Google</button>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script>
+      // Import the functions you need from the SDKs you need
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDijO2GQ6Oxe7VyqJgT2RkPYvH2hLGtoZI",
+        authDomain: "music-world-4090b.firebaseapp.com",
+        projectId: "music-world-4090b",
+        storageBucket: "music-world-4090b.appspot.com",
+        messagingSenderId: "751645363350",
+        appId: "1:751645363350:web:ae0fa9e6b7ed37953c86b7",
+        measurementId: "G-D277DXWBLE",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+      let provider = new firebase.auth.GoogleAuthProvider();
+
+      const loginWithGoogle = () => {
+        console.log("login");
+        firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then((res) => {
+            //   showUserDetails(res.user);
+            console.log(res);
+          })
+          .catch((err) => console.log(err));
+      };
+      document
+        .getElementById("login")
+        .addEventListener("click", loginWithGoogle);
+    </script>
+    <script>
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          location.pathname = "/home.html";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Music Player</title>
+    <!-- Load FontAwesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+
+    <!-- Load the custom CSS style file -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    
+    <div class="header">
+    <nav class="navbar">
+      <div class="head">
+      <img
+        src="./Photos/_violin_musical_logo_.png"
+        alt="logo"
+        height="100px"
+        width="100px"
+      />
+      <div class="head-text1">
+        <h1>MUSIC WORLD</h1>
+        <p>South Indian music hub</p>
+      </div>
+      <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </div>
+    </div>
+      <ul class="nav-menu">
+             <li class="nav-item">
+              <details>
+                <summary>Song List</summary>
+                <ul id="classlist">
+
+                </ul>
+            </details>
+              </li>
+          <li class="nav-item">
+              <a href="#" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+              <a href="#" id="logout" class="nav-link">Logout</a>
+          </li>
+      </ul></div>
+    <div class="player">
+      <div class="details">
+        <div class="now-playing">TOP KANNADA SONGS PLAYING x OF y</div>
+        <div class="track-art"></div>
+        <div class="track-name">Track Name</div>
+        <div class="track-artist">Track Artist</div>
+      </div>
+      <div class="buttons">
+        <div class="prev-track" onclick="prevTrack()">
+          <i class="fa fa-step-backward fa-2x"></i>
+        </div>
+        <div class="playpause-track" onclick="playpauseTrack()">
+          <i class="fa fa-play-circle fa-5x"></i>
+        </div>
+        <div class="next-track" onclick="nextTrack()">
+          <i class="fa fa-step-forward fa-2x"></i>
+        </div>
+        
+      </div>
+      <div class="slider_container">
+        <div class="current-time">00:00</div>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="0"
+          class="seek_slider"
+          onchange="seekTo()"
+        />
+        <div class="total-duration">00:00</div>
+      </div>
+      <div class="slider_container">
+        <i class="fa fa-volume-down"></i>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="99"
+          class="volume_slider"
+          onchange="setVolume()"
+        />
+        <i class="fa fa-volume-up"></i>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script>
+      // Import the functions you need from the SDKs you need
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDijO2GQ6Oxe7VyqJgT2RkPYvH2hLGtoZI",
+        authDomain: "music-world-4090b.firebaseapp.com",
+        projectId: "music-world-4090b",
+        storageBucket: "music-world-4090b.appspot.com",
+        messagingSenderId: "751645363350",
+        appId: "1:751645363350:web:ae0fa9e6b7ed37953c86b7",
+        measurementId: "G-D277DXWBLE",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+    document.querySelector("#logout").addEventListener("click", () => {
+  firebase
+    .auth()
+    .signOut()
+    .then((res) => console.log("user logged out"));
+});
+    </script>
+    <script>
+      firebase.auth().onAuthStateChanged((user) => {
+        if (!user) {
+          location.pathname = "";
+        }
+      });
+    </script>
+    <!-- Load the main script for the player -->
+    <script  src="main.js"></script>
+  </body>
+</html>

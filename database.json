@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Yenammi Yenami",
+    "artist": "Vijay prakash",
+    "image": "./Photos/ayogya.jpg",
+    "path": "./Audio/[iSongs.info] 01 - Yenammi Yenammi.mp3"
+  },
+  {
+    "name": "Robert",
+    "artist": "Divya Kumar",
+    "image": "./Photos/Robert.png",
+    "path": "./Audio/[iSongs.info] 02 - Jai Sriram.mp3"
+  },
+  {
+    "name": "Pogaru",
+    "artist": "Chandan Shetty",
+    "image": "./Photos/Pogaru.jpg",
+    "path": "./Audio/[iSongs.info] 02 - Karabuu.mp3"
+  },
+  {
+    "name": "Chakravarthy",
+    "artist": "Armaan Malik,shreya ghoshal",
+    "image": "./Photos/chakravarthy.jpg",
+    "path": "./Audio/[iSongs.info] 02 - Ondu Malebillu.mp3"
+  },
+  {
+    "name": "Raambo-2",
+    "artist": "Ravindra Soragavi",
+    "image": "./Photos/Ramboo-2.jpg",
+    "path": "./Audio/[iSongs.info] 03 - Chuttu Chuttu.mp3"
+  },
+  {
+    "name": "Mundina Nildana",
+    "artist": "Vasuki Vaibhav",
+    "image": "./Photos/Mundina-nildhana.jpg",
+    "path": "./Audio/[iSongs.info] 03 - Innunu Bekagide.mp3"
+  },
+  {
+    "name": "Robert",
+    "artist": "Shreya Ghoshal",
+    "image": "./Photos/Robert.png",
+    "path": "./Audio/[iSongs.info] 06 - Kannau Hodiyaka.mp3"
+  },
+  {
+    "name": "Mungaru Male",
+    "artist": "sonu nigam",
+    "image": "./Photos/Mungaru-male.jpg",
+    "path": "./Audio/Anisuthide.mp3"
+  },
+  {
+    "name": "Mungaru Male",
+    "artist": "Sonu Nigam",
+    "image": "./Photos/Mungaru male.jpg",
+    "path": "./Audio/Kunidu Kunidu Bare.mp3"
+  },
+  {
+    "name": "GentalMan",
+    "artist": "Sanjith Hegde",
+    "image": "./Photos/Gentalman.webp",
+    "path": "./Audio/Marali Manasaagide Mp3 Song From Gentleman Movie.mp3"
+  },
+  {
+    "name": "Inspector Vikram",
+    "artist": "Sonu Nigam",
+    "image": "./Photos/vikram.webp",
+    "path": "./Audio/Marali Manasaagide Mp3 Song From Gentleman Movie.mp3"
+  }
+]
