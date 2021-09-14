@@ -35,8 +35,11 @@ body {
 }
 details[open] {
   position: absolute;
-  padding: 2rem;
-  background-color: blue;
+  top: 14%;
+  right: 15%;
+  padding: 5rem;
+  background-color: #66fff8;
+  cursor: pointer;
 }
 
 li {
@@ -121,6 +124,10 @@ a {
     text-decoration: overline;
   }
 
+  details[open] {
+    top: 0%;
+    right: 9%;
+  }
   .nav-menu {
     position: fixed;
     right: -105%;
